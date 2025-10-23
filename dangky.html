@@ -23,26 +23,26 @@
     <main>
         <fieldset>
             <legend>Đăng ký</legend>
-            <form action="" method="post" enctype="multipart/form-data">
+            <form id="SignupForm" action="" method="post" enctype="multipart/form-data">
                 <table>
                     <tr>
                         <td><label for="email">Email</label></td>
-                        <td><input type="text" name="email" placeholder="Vui lòng nhập email" id="email"></td>
+                        <td><input required="true" type="text" name="email" placeholder="Vui lòng nhập email" id="email"></td>
                     </tr>
                     <tr>
                         <td><label for="psw">Mật khẩu</label></td>
-                        <td><input type="password" name="psw" placeholder="Vui lòng nhập mật khẩu" id="psw"></td>
+                        <td><input required="True" type="password" name="psw" placeholder="Vui lòng nhập mật khẩu" id="psw"></td>
                     </tr>
                     <tr>
                         <td><label for="psw2">Nhập lại mật khẩu</label></td>
-                        <td><input type="password" name="psw2", placeholder="Vui lòng nhập mật khẩu" id="psw2"></td>
+                        <td><input required="True" type="password" name="psw2", placeholder="Vui lòng nhập mật khẩu" id="psw2"></td>
                     </tr>
                     <tr>
                         <td><label for="memberType">Cấp độ thành viên</label></td>
                         <td>
-                            <input type="radio" name="memberType" value="1">Bạc </input>
-                            <input type="radio" name="memberType" value="2">Vàng </input>
-                            <input type="radio" name="memberType" value="3">Bạch kim </input>
+                            <input required="True" type="radio" name="memberType" value="1">Bạc </input>
+                            <input required="True" type="radio" name="memberType" value="2">Vàng </input>
+                            <input required="True" type="radio" name="memberType" value="3">Bạch kim </input>
                         </td>
                     </tr>
                     <tr>
@@ -55,7 +55,7 @@
                     <tr>
                         <td>
                             <input type="reset" value="Hủy">
-                            <input type="submit" value="Đăng ký">
+                            <input id="SignupSubmitBtn" type="submit" value="Đăng ký">
                         </td>
                     </tr>
                 </table>
@@ -70,4 +70,5 @@
     </footer>
     
 </body>
+<script src="./lab3/script.js"></script>
 </html>
