@@ -171,4 +171,30 @@ article {
 }
 
 
+/* Trang don hang */
+
+table, th, td {
+    border: 1px solid black;
+    border-collapse: collapse;
+    text-align: center;
+    padding: 4px;
+    min-width: 70px;
+}
+
+table {
+    margin: auto;
+    min-width: 90%;
+}
+
+.cancelCartBtn {
+    background-color: #cddc39;
+    color: #F9086D;
+    padding: 4px;
+    border: none;
+}
+
+.cancelCartBtn:hover {
+    cursor: pointer;
+}
+
 

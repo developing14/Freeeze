@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./fontawesome-free-7.1.0-web/fontawesome-free-7.1.0-web/css/all.css">
+    <link rel="stylesheet" href="style.css">
+    <link rel="shortcut icon" href="./lab1/TH_B1_Data/images/" type="image/x-icon">
+    <title>Giỏ hàng</title>
+</head>
+<body>
+    <header>
+        <a href="#"><img src="./lab1/TH_B1_Data/images/logo.png" alt="" id="logo"></a>
+        <nav>
+            <a href="Trangchu.html">Trang chủ</a>
+            <a href="gioithieu.html">Giới thiệu</a>
+            <a href="sanpham.html">Sản phẩm</a>
+            <a href="tintuc.html">Tin tức</a>
+            <a href="dangnhap.html">Đăng nhập</a>
+            <a href="dangky.html">Đăng ký</a>
+            <a href="lienhe.html">Liên hệ</a>
+        </nav>
+        <div>
+            <form action="" method="GET" id="searchForm" enctype="application/x-www-form-urlencoded">
+            <input id="searchContent" type="text">
+            <button id="searchBtn" type="submit"><i class="fa fa-search"></i></button>
+            </form>
+            <button id="cartBtn" onclick="location.href = 'donhang.html' "><i class="fa fa-cart-shopping"></i></button>
+        </div>
+    </header>
+    <main>
+        <h1>chi tiết đơn hàng</h1>
+        <table id="cartDetail">
+            <thead>
+                <tr>
+                    <td></td>
+                    <td>Tên SP</td>
+                    <td>Số lượng</td>
+                    <td>Giá</td>
+                    <td>Thành tiền</td>
+                    <td><button class="cancelCartBtn"><i class="fa fa-trash"></i></button></td>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>noi dung</td>
+                    <td>noi dung</td>
+                    <td>noi dung</td>
+                    <td>noi dung</td>
+                    <td>noi dung</td>
+                    <td>noi dung</td>
+                </tr>
+            </tbody>
+            <tfoot>
+                <tr id="Sumary">
+                    <td>Tổng thành tiền</td>
+                </tr>
+                <tr id="discount">
+                    <td>Chiết khấu</td>
+                </tr>
+                <tr id="tax">
+                    <td>Thuế</td>
+                </tr>
+                <tr id="total">
+                    <td>Tổng đơn hàng:</td>
+                </tr>
+            </tfoot>
+        </table>
+    </main>
+    <footer>
+        <a href="">fb</a>
+        <a href="">x</a>
+        <a href="">pin</a>
+        <a href="#" id="top"></a>
+    </footer>
+</body>
+<script src="./lab3/script.js"></script>
+</html>

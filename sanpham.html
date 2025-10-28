@@ -4,6 +4,8 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Sản phẩm</title>
+    <link rel="stylesheet" href="./fontawesome-free-7.1.0-web/fontawesome-free-7.1.0-web/css/all.css">
+
     <link rel="stylesheet" href="style.css">
     <link rel="shortcut icon" href="./lab1/TH_B1_Data/images/" type="image/x-icon">
 </head>
@@ -19,6 +21,13 @@
             <a href="dangky.html">Đăng ký</a>
             <a href="lienhe.html">Liên hệ</a>
         </nav>
+        <div>
+            <form action="" method="GET" id="searchForm" enctype="application/x-www-form-urlencoded">
+            <input id="searchContent" type="text">
+            <button id="searchBtn" type="submit"><i class="fa fa-search"></i></button>
+            </form>
+            <button id="cartBtn" onclick="location.href = 'donhang.html' "><i class="fa fa-cart-shopping"></i></button>
+        </div>
     </header>
     <main>
         <article>
@@ -29,8 +38,8 @@
                 <p>Hương vị thơm ngon của trái Kiwi xanh nổi tiếng của đất nước New Zealand có trong Sữa chua vị Kiwi xanh đem đến một món ăn nhẹ Siêu ngon và tốt cho hệ tiêu hóa<a href="">Xem chi tiết</a></p>
                 <span>
                     Số lượng
-                    <input type="number" max="100" min="0" value="0" size="3">
-                    <button class="addCartBtn" onclick="addCart()">Đặt hàng</button>
+                    <input type="number" id="sp001" max="100" min="0" value="0" size="3">
+                    <button class="addCartBtn"  onclick="addCart('sp001')">Đặt hàng</button>
                 </span>
             </section>
             <section>
@@ -39,8 +48,8 @@
                 <p>Sữa chua xoài thích hợp cho mọi lứa tuổi, vì vậy hãy để cả gia đình quây quần bên nhau cùng thưởng thức món ăn thơm ngon, bổ dưỡng này<a href="">Xem chi tiết</a></p>
                 <span>
                     Số lượng
-                    <input type="number" max="100" min="0" value="0" size="3">
-                    <button class="addCartBtn" onclick="addCart()">Đặt hàng</button>
+                    <input type="number" id="sp002" max="100" min="0" value="0" size="3">
+                    <button class="addCartBtn"  onclick="addCart('sp002')">Đặt hàng</button>
                 </span>
             </section>
             <section>
@@ -49,8 +58,8 @@
                 <p>trong dưa lưới chứa rất nhiều vitamin C có tác dụng làm đẹp a hiệu quả. Phụ nữ ăn sinh tố dưa lưới thường xuyên sẽ có làn da mịn màng <a href="">Xem chi tiết</a></p>
                 <span>
                     Số lượng
-                    <input type="number" max="100" min="0" value="0" size="3">
-                    <button class="addCartBtn" onclick="addCart()">Đặt hàng</button>
+                    <input type="number" id="sp003" max="100" min="0" value="0" size="3">
+                    <button class="addCartBtn"  onclick="addCart('sp003')">Đặt hàng</button>
                 </span>
             </section>
         </article>
@@ -62,8 +71,8 @@
                 <p>Quả mâm xôi là loại quả ăn họ hoa hồng, có nguổn gốc từ châu Âu, Bắc Á và được trồng ở các vùng ôn đới trên toàn thế giới. Có nhiều loại, bao gồm đen, tím và vàng<a href="">Xem chi tiết</a></p>
                 <span>
                     Số lượng
-                    <input type="number" max="100" min="0" value="0" size="3">
-                    <button class="addCartBtn" onclick="addCart()">Đặt hàng</button>
+                    <input type="number" id="sp004" max="100" min="0" value="0" size="3">
+                    <button class="addCartBtn"  onclick="addCart('sp004')">Đặt hàng</button>
                 </span>
             </section>
             <section>
@@ -72,18 +81,48 @@
                 <p>Dây tây là một loài cây thân thảo có thân ngắn và các chiếc lá mọc gần với nhau, Lá có nhiều gai, bề mặt lá có nhiều lông tơ và kích thước là có thể khác nhau ở từng giống<a href="">Xem chi tiết</a></p>
                 <span>
                     Số lượng
-                    <input type="number" max="100" min="0" value="0" size="3">
-                    <button class="addCartBtn" onclick="addCart()">Đặt hàng</button>
+                    <input type="number" id="sp005" max="100" min="0" value="0" size="3">
+                    <button class="addCartBtn"  onclick="addCart('sp005')">Đặt hàng</button>
                 </span>
             </section>
             <section>
                 <img src="./lab1/TH_B1_Data/images/sanpham/" alt="">
-                <h2>Sữa chua vị</h2>
+                <h2>Sữa chua vị Việt Quất</h2>
                 <p><a href="">Xem chi tiết</a></p>
                 <span>
                     Số lượng
-                    <input type="number" max="100" min="0" value="0" size="3">
-                    <button class="addCartBtn" onclick="addCart()">Đặt hàng</button>
+                    <input type="number" id="sp006" max="100" min="0" value="0" size="3">
+                    <button class="addCartBtn"  onclick="addCart('sp006')">Đặt hàng</button>
+                </span>
+            </section>
+            <section>
+                <img src="./lab1/TH_B1_Data/images/sanpham/" alt="">
+                <h2>Sữa chua vị Bưởi</h2>
+                <p><a href="">Xem chi tiết</a></p>
+                <span>
+                    Số lượng
+                    <input type="number" id="sp007" max="100" min="0" value="0" size="3">
+                    <button class="addCartBtn"  onclick="addCart('sp007')">Đặt hàng</button>
+                </span>
+            </section>
+            <section>
+                <img src="./lab1/TH_B1_Data/images/sanpham/" alt="">
+                <h2>Sữa chua vị Táo xanh</h2>
+                <p><a href="">Xem chi tiết</a></p>
+                <span>
+                    Số lượng
+                    <input type="number" id="sp008" max="100" min="0" value="0" size="3">
+                    <button class="addCartBtn"  onclick="addCart('sp008')">Đặt hàng</button>
+                </span>
+            </section>
+            <section>
+                <img src="./lab1/TH_B1_Data/images/sanpham/" alt="">
+                <h2>Sữa chua vị Dứa</h2>
+                <p><a href="">Xem chi tiết</a></p>
+                <span>
+                    Số lượng
+                    <input type="number" id="sp009" max="100" min="0" value="0" size="3">
+                    <button class="addCartBtn"  onclick="addCart('sp009')">Đặt hàng</button>
                 </span>
             </section>
         </article>
@@ -95,4 +134,5 @@
         <a href="#" id="top"></a>
     </footer>
 </body>
+<script src="./lab3/script.js"></script>
 </html>
