@@ -5,11 +5,15 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Tin tức</title>
     <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="./fontawesome-free-7.1.0-web/fontawesome-free-7.1.0-web/css/all.css">
     <link rel="shortcut icon" href="./lab1/TH_B1_Data/images/favicon.ico" type="image/x-icon">
 </head>
 <body>
     <header>
         <a href="#"><img src="./lab1/TH_B1_Data/images/logo.png" alt="" id="logo"></a>
+        <img src="/lab2/TH_B2_Data/header-img1.png" alt="" id="hi1">
+        <img src="/lab2/TH_B2_Data/header-img2.png" alt="" id="hi2">
+        <img src="/lab2/TH_B2_Data/header-img3.png" alt="" id="hi3">
         <nav>
             <a href="trangchu.html">Trang chủ</a>
             <a href="gioithieu.html">Giới thiệu</a>
@@ -19,67 +23,65 @@
             <a href="dangky.html">Đăng ký</a>
             <a href="lienhe.html">Liên hệ</a>
         </nav>
+        <div>
+            <form action="" method="GET" id="searchForm" enctype="application/x-www-form-urlencoded">
+            <input id="searchContent" type="text">
+            <button id="searchBtn" type="submit"><i class="fa fa-search"></i></button>
+            </form>
+            <button id="cartBtn" onclick="location.href = 'donhang.html' ">  <i class="fa fa-cart-shopping"></i></button>
+        </div>
     </header>
-    <main>
-        <h1>Tin tức</h1>
+    <main class="grid left-branch">
         <article>
+            <h1>Tin tức</h1>
             <div>
                 <h2>Lộ diện siêu năng lực từ trái xoài!</h2>
                 <img src="/lab1/TH_B1_Data/images/tintuc/news1.jpg" alt="" width="400px">
                 <p>Xoài l2 một trong những trái chủ lực của đồng bằng sông Cửu Long (ĐBSCL), chiếm khoảng 48% tổng diện tích xoài cả nước. Trong đó, tỉnh Đồng Tháp hiện có diện tích trồng xoài khoảng 12.171ha - lớn nhất vùng ĐBSCL với sản lượng hàng năm gần 124 ngàn tấn<a href="">Xem chi tiết</a></p>
             </div>
-        </article>
-        <article>
             <div>
                 <h2>Sữa các loại hạt - món ngon cho hệ miễn dịch khỏe</h2>
                 <img src="/lab1/TH_B1_Data/images/tintuc/news2.jpg" alt="" width="400px">
                 <p>Các loại sữa hạt càng ngày trở nên quen thuộc với mọi người, bởi hàm lượng dinh dưỡng cao, và lành tính. Với thị trường sữa hạt đa dạng phong phú, hôm nay chúng ta cùng điểm qua xem có các loại sữa hạt nào, và loại nào là bổ dưỡng nhất cho sức khỏe?<a href="">Xem chi tiết</a></p>
             </div>
-        </article>
-        <article>
             <div>
                 <h2>Sữa chua kiwi - món quà cho sức khỏe</h2>
                 <img src="/lab1/TH_B1_Data/images/tintuc/news3.jpg" alt="" width="400px">
                 <p>Kiwi thành phần dinh dưỡng rất cao so với các loại hoa quả khác. Hàm lượng vitamin C cao cho hệ miễn dịch khỏe mạnh cùng nguồn chất xơ hỗ trợ hệ tiêu hóa. Siêu quả Kiwi cho cả nhà siêu khỏe, 100% vitamin C cần thiết mỗi ngày<a href="">Xem chi tiết</a></p>
             </div>
-        </article>
-        <article>
             <div>
                 <h2>Ra mắt app sữa chua Freeeze trên nền tảng ios</h2>
                 <img src="/lab1/TH_B1_Data/images/tintuc/news4.jpg" alt="" width="400px">
                 <p>Nhằm mang đến cho tất cả khách hàng những trải nghiệm thú vị nhất Công ty Sữa Chua Freeeze giới thiệu app đặt hàng độc đáo, giúp khách hàng mua sắm được mọi lúc mọi nơi với nhiều tiện ích<a href="">Xem chi tiết</a></p>
             </div>
-        </article>
-        <article>
             <div>
                 <h2>Đăng ký thành viên - nhận ngay ưu đãi</h2>
                 <img src="/lab1/TH_B1_Data/images/tintuc/news5.jpg" alt="" width="400px">
                 <p>Công ty sữa chua hân hạnh mang đến chương trình "Đăng ký thành viên" với nhiều ưu đãi độc đáo. Member Card - thẻ thành viên nhà Sữa chua Freeeze dành cho tất cả khách hàng đăng ký tài khoản và phát sinh đơn hàng<a href="">Xem chi tiết</a></p>
             </div>
-        </article>
-        <article>
             <div>
                 <h2>Tuyển giám sát chuỗi cửa hàng</h2>
                 <img src="/lab1/TH_B1_Data/images/tintuc/news6.jpg" alt="" width="400px">
                 <p>Tuyển Giám Sát chuỗi cửa hàng: - tại khu vực TP Hải Phòng và các tỉnh lân cận - Số lượng: 01 Mô tả: Giám sát hoạt động kinh doanh các cửa hàng; Kiểm tra lịch làm việc của các cửa hàng<a href="">Xem chi tiết</a></p>
             </div>
         </article>
-        <aside>
+        <aside class="left">
             <h1>Được quan tâm</h1>
             <article>
                 <div>
-                    <h2>Khai trương hân hoan - ưu đãi ngập tràn</h2>
                     <img src="/lab1/TH_B1_Data/images/tintuc/hotnews.jpg" alt="" width="400px">
+                    <h2>Khai trương hân hoan - ưu đãi ngập tràn</h2>
                     <p>Khai trương hân hoan - ưu đãi ngập tràn. Thêm 1 ngôi nhà mới của Sữa chua Freeeze được khai trương<a href="">Xem chi tiết</a></p>
                 </div>
             </article>
         </aside>
     </main>
     <footer>
-        <a href="">fb</a>
-        <a href="">x</a>
-        <a href="">pin</a>
-        <a href="#" id="top"></a>
+        <p>2021 Bản quyền thuộc về FreeezeVN.</p>
+        <a href=""><i class="fa-brands fa-facebook"></i></a>
+        <a href=""><i class="fa-brands fa-x"></i></a>
+        <a href=""><i class="fa-brands fa-pinterest"></i></a>
+        <a href="#" id="top"><img src="./lab2/TH_B2_Data/top.png" alt=""></a>
     </footer>
 </body>
 </html>

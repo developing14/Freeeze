@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="./fontawesome-free-7.1.0-web/fontawesome-free-7.1.0-web/css/all.css">
     <link rel="stylesheet" href="style.css">
-    <link rel="shortcut icon" href="./lab1/TH_B1_Data/images/" type="image/x-icon">
+    <link rel="shortcut icon" href="./lab1/TH_B1_Data/images/favicon.ico" type="image/x-icon">
     <title>Giỏ hàng</title>
 </head>
 <body>
@@ -30,39 +30,32 @@
     </header>
     <main>
         <h1>chi tiết đơn hàng</h1>
-        <table id="cartDetail">
+        <table id="cartTable">
             <thead>
                 <tr>
-                    <td></td>
                     <td>Tên SP</td>
                     <td>Số lượng</td>
                     <td>Giá</td>
+                    <td>Hình ảnh</td>
                     <td>Thành tiền</td>
-                    <td><button class="cancelCartBtn"><i class="fa fa-trash"></i></button></td>
+                    <td></td>
                 </tr>
             </thead>
             <tbody>
-                <tr>
-                    <td>noi dung</td>
-                    <td>noi dung</td>
-                    <td>noi dung</td>
-                    <td>noi dung</td>
-                    <td>noi dung</td>
-                    <td>noi dung</td>
-                </tr>
+                
             </tbody>
             <tfoot>
-                <tr id="Sumary">
-                    <td>Tổng thành tiền</td>
+                <tr >
+                    <td id="Sumary" colspan="6">Tổng thành tiền</td>
                 </tr>
-                <tr id="discount">
-                    <td>Chiết khấu</td>
+                <tr>
+                    <td id="discount" colspan="6">Chiết khấu</td>
                 </tr>
-                <tr id="tax">
-                    <td>Thuế</td>
+                <tr>
+                    <td id="tax" colspan="6">Thuế</td>
                 </tr>
-                <tr id="total">
-                    <td>Tổng đơn hàng:</td>
+                <tr>
+                    <td id="total" colspan="6">Tổng đơn hàng:</td>
                 </tr>
             </tfoot>
         </table>

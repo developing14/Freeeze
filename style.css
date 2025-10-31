@@ -1,8 +1,10 @@
+/* Common style */
 * {
     /* text-decoration: none; */
     padding: 0;
     margin: 0;
     box-sizing: border-box;
+    scroll-behavior: smooth;
 }
 
 header, footer, body {
@@ -10,10 +12,134 @@ header, footer, body {
     margin: auto;
 }
 
+aside {
+    margin: 2px;
+    padding: 5px;
+    color: #000;
+    text-align: center;
+}
+
+main {
+    border: 1px solid #ccc7c8;
+    border-radius: 5px;
+    padding: 0 5px;
+    background-color: #fff;
+}
+
+h1 {
+    margin: 12px 0px 16px;
+    color: #F9086D;
+    text-align: center;
+    text-transform: uppercase;
+    font-family: 'Open Sans', san-serif;
+    font-weight: 300;
+    line-height: 34px;
+}
+
+h2 {
+    margin: 5px 0 10px;
+    color: #F9086D;
+    font-size: 24px;
+    font-family: 'Open Sans', san-serif;
+    font-weight: 300;
+    line-height: 28px;
+}
+
+h3 {
+    color: #F9086D;
+    text-align: center;
+    text-transform: uppercase;
+    font-size: 20px;
+    font-family: 'Open Sans', san-serif;
+    font-weight: 300;
+    line-height: 24px;
+    break-before: column;
+}
+
+/* Grid layout */
+
+body {
+    display: grid;    
+    grid-template-areas: 
+        "header-cell"
+        "main-cell"
+        "footer-cell";
+}
+    
+header {
+    display: grid;
+    grid-area: header-cell;
+    grid-template-areas: 
+    ". ."
+    "nav-cell search-cell";
+}
+    
+nav {
+    grid-area: nav-cell;
+    justify-self: left;
+    align-self: self-end;
+}
+
+#searchContainer {
+    display: inline-block;
+    grid-area: search-cell;
+    justify-self: right;
+    align-self: self-end;
+}
+
+main.grid{
+    grid-area: main-cell;
+    display: grid;
+}
+
+main.pillar {
+    grid-template-areas: 
+    "article1"
+    "article2"
+    "article3"
+    "article4"
+    "article5";
+}
+
+main.right-branch {
+    grid-template-areas: 
+    "article1 right-cell"
+}
+
+main.left-branch {
+    grid-template-areas: 
+    "left-cell article1";
+}
+
+main.right-branch  {
+    grid-template-columns: 3fr 1fr;
+}
+
+main.grid article:nth-child(1) { grid-area: article1; }
+main.grid article:nth-child(2) { grid-area: article2; }
+main.grid article:nth-child(3) { grid-area: article3; }
+main.grid article:nth-child(4) { grid-area: article4; }
+main.grid article:nth-child(5) { grid-area: article5; }
+
+aside.left {
+    grid-area: left-cell;
+}
+
+aside.right {
+    grid-area: right-cell;
+}
+
+footer{
+    grid-area: footer-cell;
+}
+
+/* Header */
+
 header{
     background-image: url(./lab2/TH_B2_Data/header.png);
     height: 100px;
 }
+
 
 #hi1{
     height: 100px;
@@ -61,21 +187,20 @@ header{
     height: 36px;
 }
 
-nav {
-    position: relative;
-    top: 20px;
+/* Navigation bar */
+
+nav, #searchContainer {
+    padding: 5px;
 }
 
 nav a {
-    float: left;
     margin: 3px;
     border: 1px solid #fff;
     padding: 2px 4px;
     height: 20px;
-    text-align: center;
     color: #ed4190;
     line-height: 17px;
-    background-color: #ffff80;
+    background-color: #fff;
     text-decoration: none;
 }
 
@@ -84,36 +209,101 @@ nav a:hover {
     background-color: #ed4190;
 }
 
-header div {
+/* Search box & cart button */
+
+#searchContainer {
+    position: relative;
     padding-top: 3px;
-    float: right;
 }
 
-.searchBtn {
+#searchContainer button {
+    display: inline-block;
     padding: 4px;
-    min-width: 30px;
-    color: #fff;
     background-color: #cddc39;
+    border: none;
 }
 
-.cartBtn {
-    padding: 4px;
-    min-width: 30px;
-    color: #ed4190;
-    background-color: #cddc39;
-}
-
-.cartBtn:hover,
-.searchBtn:hover {
+#searchContainer button:hover {
     cursor: pointer;
+    background-color: #ed4190;
+    color: #fff;
 }
+
+#searchBtn {
+    color: #fff;
+}
+
+#cartBtn {
+    color: #ed4190;
+}
+
+/* Article displaying */
+/* Used for multile page */
+
+.col-2 {
+    column-count: 2;
+}
+
+/* Order */
+#order{
+    margin-bottom: 5px;
+    text-align: center;
+    width: 100%;
+}
+
+#order img {
+    width: 150px;
+}
+
+#order div{
+    border: solid #ed4190 1px;
+    border-radius: 5px;
+    padding-top: 5px;
+    width: 24%;
+    display: inline-block;
+}
+
+/* Product cards */
+
+article.item {
+    display: flex;
+    margin: 0;
+    padding: 0;
+}
+ 
+.itemCard {
+    display: flex;
+    flex: 1;
+    flex-direction: column;
+    justify-content: space-between;
+    margin: 3px;
+    border: solid 1px #dbd7d9;
+    padding: 0px;
+}
+
+.itemCard h2 {
+    text-align: center;
+}
+
+.itemCard span {
+    background: linear-gradient(180deg,  rgba(0, 0, 0, 0) 0%, #cddc39 80%);
+    display: block;
+    margin: 4px 0;
+    padding: 3px;
+    width: 100%;
+    text-align: center;
+    line-height: 2;
+}
+
+
+/* Footer */
 
 footer {
     top: 2px;
     border: 1px solid #ccc7c8;
     border-radius: 5px;
     padding: 0 5px;
-    color: #fff;
+    color: #000;
     text-align: center;
 }
 
@@ -121,6 +311,8 @@ footer i {
     color: #ed4190;
     text-decoration: none;
 }
+
+/* Move-to-top button */
 
 #top {
     position: fixed;
@@ -134,46 +326,16 @@ footer i {
     width: 50px;
 }
 
-h1 {
-    margin: 12px 0px 16px;
-    color: #F9086D;
-    text-align: center;
-    text-transform: uppercase;
-    font-family: 'Open Sans', san-serif;
-    font-weight: 300;
-    line-height: 34px;
-    break-before: column;
+
+/* Cart displaying */
+
+#cartTable {
+    margin: auto;
+    min-width: 90%;
 }
-
-h2 {
-    margin: 5px 0 10px;
-    color: #F9086D;
-    font-size: 24px;
-    font-family: 'Open Sans', san-serif;
-    font-weight: 300;
-    line-height: 28px;
-    break-before: column;
-}
-
-h3 {
-    color: #F9086D;
-    text-align: center;
-    text-transform: uppercase;
-    font-size: 20px;
-    font-family: 'Open Sans', san-serif;
-    font-weight: 300;
-    line-height: 24px;
-    break-before: column;
-}
-
-article {
-    column-count: 2;
-}
-
-
-/* Trang don hang */
-
-table, th, td {
+#cartTable, 
+#cartTable th,
+#cartTable td {
     border: 1px solid black;
     border-collapse: collapse;
     text-align: center;
@@ -181,10 +343,11 @@ table, th, td {
     min-width: 70px;
 }
 
-table {
-    margin: auto;
-    min-width: 90%;
+#cartTable tfoot td {
+    text-align: right;
 }
+
+/* Cancel cart button */
 
 .cancelCartBtn {
     background-color: #cddc39;

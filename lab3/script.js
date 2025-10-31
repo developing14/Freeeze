@@ -11,11 +11,14 @@ async function sendData(form) {
 }
 
 const searchBtn = document.getElementById('searchBtn')
+
 if (searchBtn) {
     searchBtn.addEventListener("click", (e)=> {
         e.preventDefault()
-        const searchForm = document.getElementById('searchForm')
-        sendData(searchForm)
+
+        const searchContent = document.getElementById('searchContent').value
+        if (searchContent.length > 0) location.href = 'timkiem.html'       
+        
     })
 }
 
@@ -118,66 +121,125 @@ var itemList = {
 }
 
 function addCart(code) {
-    const number = parseInt(document.getElementById(code).value)
+    let number = parseInt(document.getElementById(code).value)
+    // Xu li truong hop so luong vuot 100
+    if (number > 100) number = 100
     
     // Truong hop chua co trong gio hang
     if (!window.localStorage.getItem(code)) return window.localStorage.setItem(code, number)
     
     // Truong hop da co trong gio hang ...
     const current = parseInt(window.localStorage.getItem(code))
-    const totalAmount =  current + number
+    let totalAmount =  current + number
 
-    // ... so luong vuot 100
-    if (totalAmount > 100) return window.localStorage.setItem(code, 100)
+    // Xu li truong hop so luong vuot 100
+    if (totalAmount > 100) totalAmount = 100
 
-    // ... so luong khong vuot 100
     return window.localStorage.setItem(code, totalAmount)
 }
 
 
-const cartTable = document.getElementById('cartDetail')
 function showcart(){
-    if (cartTable){
-        // Khoi tao du lieu don hang (currentCart)
-        let currentCart = {}
+    // Khoi tao du lieu don hang (currentCart)
+    let currentCart = {}
+    
+    // duyet qua danh sach san pham (itemList), 
+    // lay key cua moi san pham tra cuu tren he thong
+    // Neu tim thay du lieu tren don hang, nhap du lieu vao currentCart
+    for (item of Object.keys(itemList)){
+        if (localStorage.getItem(item)) {
+            currentCart[item] = itemList[item]
+            currentCart[item].amount = localStorage.getItem(item)
+            currentCart[item].code = item
+        }
+    }
+    
+    // Vong lap tao element tren html
+    let priceSum = 0
+    for (item in currentCart){
+
+        let name = document.createElement('td')
+        name.textContent = currentCart[item].name
         
-        // duyet qua danh sach san pham (itemList), 
-        // lay key cua moi san pham tra cuu tren he thong
-        // Neu tim thay du lieu tren don hang, nhap du lieu vao currentCart
-        for (item of Object.keys(itemList)){
-            if (localStorage.getItem(item)) {
-                currentCart[item] = itemList[item]
-                currentCart[item].amount = localStorage.getItem(item)
+        let amount = document.createElement('td')
+        amount.textContent = currentCart[item].amount
+
+        let price = document.createElement('td')
+        price.textContent = currentCart[item].price
+
+        let photo = document.createElement('td')
+        photo.innerHTML = "<img src='"+ currentCart[item].photo+"'/>"
+        
+        let total = document.createElement('td')
+        total.innerHTML = currentCart[item].amount * currentCart[item].price
+        priceSum+= (currentCart[item].amount * currentCart[item].price)
+        
+        let btn = document.createElement('button')
+        btn.className='cancelCartBtn'
+        btn.id = currentCart[item].code
+        btn.innerHTML = "<i class=\"fa fa-trash\"></i>"
+
+        let btnSlot = document.createElement('td')
+        btnSlot.appendChild(btn)
+
+        let currentRow = document.createElement('tr')
+        currentRow.appendChild(name)
+        currentRow.appendChild(amount)
+        currentRow.appendChild(price)
+        currentRow.appendChild(photo)
+        currentRow.appendChild(total)
+        currentRow.appendChild(btnSlot)
+
+        const tbody = document.getElementsByTagName('tbody')[0]
+        tbody.appendChild(currentRow)        
+        
+
+    }
+    // Hien thi thong tin Tfoot
+    const sum = document.getElementById('Sumary')
+    sum.textContent = "Tổng thành tiền (A) = " + priceSum
+
+    // Tinh chiet khau
+    let discount = 0
+
+    const today = new Date()
+    const hour = today.getHours()
+    const min = today.getMinutes()
+    const day = today.getDay()
+    
+    const totalMin = hour * 60 + min
+    if ((day >=1) && (day<=3) && ((totalMin >= 420 && totalMin <=660) || (totalMin >=780 && totalMin <= 1020))) discount = 0.1
+    else discount = 0    
+    
+
+    const discountCell = document.getElementById('discount')
+    discountCell.textContent = "Chiết khấu (B) = " + discount
+    
+    let tax = 0.1 * (priceSum - discount)
+    const taxCell = document.getElementById('tax')
+    taxCell.textContent = "Thuế (C) = " + tax
+
+    const final = document.getElementById("total")
+    final.textContent = "Tổng đơn hàng (A - B + C) = " + (priceSum - discount + tax)
+
+}
+
+const cartTable = document.getElementById('cartTable')
+if (cartTable) showcart()
+
+const removeCartBtns = document.getElementsByClassName('cancelCartBtn')
+if (removeCartBtns){
+    for (btn of removeCartBtns){
+        btn.addEventListener('click', ()=>{
+            const code = btn.id
+            if (code && localStorage.getItem(code)){
+                localStorage.removeItem(code)
+                cartTable.getElementsByTagName('tbody')[0].innerHTML=''
+                location.reload()
             }
-        }
-    
-        // Vong lap tao element tren html
-        let preTax = 0
-        for (item in currentCart){
-            let name = document.createElement('td')
-            let price = document.createElement('td')
-            let photo = document.createElement('td')
-            let amount = document.createElement('td')
             
-            let tr = document.createElement('tr')
-            tr.appendChild(name)
-            tr.appendChild(price)
-            tr.appendChild(photo)
-            tr.appendChild(amount)
-    
-            tr.innerHTML = "<img src='"+ currentCart[item].photo+"'/>"
-            console.log(tr);
-            
-            
-        }
-        
+        })        
     }
 }
 
-showcart()
 
-function removeCart(code){
-    localStorage.removeItem(code)
-    cartTable.getElementsByTagName('tbody')[0].innerHTML=''
-    return showcart()
-}
